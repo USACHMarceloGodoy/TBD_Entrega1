@@ -1,0 +1,112 @@
+-- Crear la tabla Estado
+CREATE TABLE Estado (
+    id SERIAL PRIMARY KEY,
+    descripcion VARCHAR(255) NOT NULL
+);
+
+-- Crear la tabla Habilidad
+CREATE TABLE Habilidad (
+    id SERIAL PRIMARY KEY,
+    descripcion VARCHAR(255) NOT NULL,
+    grado VARCHAR(255) NOT NULL
+);
+
+-- Crear la tabla Emergencia
+CREATE TABLE Emergencia (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+    descripcion VARCHAR(255),
+    fechaInicio DATE,
+    fechaFin DATE,
+    nivelPrioridad INTEGER,
+    longit DOUBLE PRECISION,
+    latit DOUBLE PRECISION
+);
+
+-- Crear la tabla Institucion
+CREATE TABLE Institucion (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+    descripcion VARCHAR(255),
+    direccion VARCHAR(255)
+);
+
+-- Crear la tabla Tarea
+CREATE TABLE Tarea (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+    descripcion VARCHAR(255),
+    voluntariosRequeridos INTEGER,
+    voluntariosInscritos INTEGER,
+    fechaInicio DATE,
+    fechaFin DATE,
+    direccion VARCHAR(255),
+    estado_id INTEGER REFERENCES Estado(id),
+    emergencia_id INTEGER REFERENCES Emergencia(id)
+);
+
+-- Crear la tabla Ranking
+CREATE TABLE Ranking (
+    id SERIAL PRIMARY KEY,
+    puntaje INTEGER,
+    flagInvitado INTEGER,
+    flagParticipa INTEGER
+);
+
+-- Crear la tabla Rol
+CREATE TABLE Rol (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255)
+);
+
+-- Crear la tabla Usuario
+CREATE TABLE Usuario (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255),
+    apellido VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255)
+);
+
+-- Crear la tabla Usuario_Rol para manejar la relación muchos a muchos entre Usuario y Rol
+CREATE TABLE Usuario_Rol (
+    usuario_id INTEGER REFERENCES Usuario(id),
+    rol_id INTEGER REFERENCES Rol(id),
+    PRIMARY KEY (usuario_id, rol_id)
+);
+
+-- Crear la tabla Voluntario
+CREATE TABLE Voluntario (
+    id SERIAL PRIMARY KEY,
+    usuario_id INTEGER REFERENCES Usuario(id),
+    puntaje INTEGER
+);
+
+-- Crear la tabla Tarea_Habilidad para manejar la relación muchos a muchos entre Tarea y Habilidad
+CREATE TABLE Tarea_Habilidad (
+    tarea_id INTEGER REFERENCES Tarea(id),
+    habilidad_id INTEGER REFERENCES Habilidad(id),
+    PRIMARY KEY (tarea_id, habilidad_id)
+);
+
+-- Crear la tabla Voluntario_Tarea para manejar la relación muchos a muchos entre Voluntario y Tarea
+CREATE TABLE Voluntario_Tarea (
+    voluntario_id INTEGER REFERENCES Voluntario(id),
+    tarea_id INTEGER REFERENCES Tarea(id),
+    PRIMARY KEY (voluntario_id, tarea_id)
+);
+
+-- Crear la tabla Voluntario_Habilidad para manejar la relación muchos a muchos entre Voluntario y Habilidad
+CREATE TABLE Voluntario_Habilidad (
+    voluntario_id INTEGER REFERENCES Voluntario(id),
+    habilidad_id INTEGER REFERENCES Habilidad(id),
+    PRIMARY KEY (voluntario_id, habilidad_id)
+);
+
+-- Crear la tabla Institucion_Emergencia para manejar la relación muchos a muchos entre Institucion y Emergencia
+CREATE TABLE Institucion_Emergencia (
+    institucion_id INTEGER REFERENCES Institucion(id),
+    emergencia_id INTEGER REFERENCES Emergencia(id),
+    PRIMARY KEY (institucion_id, emergencia_id)
+);
+
