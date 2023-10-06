@@ -1,7 +1,5 @@
 package cl.tbd.ejemplo1.config;
 
-import cl.vol.app_voluntario.repository.UsuarioRepository;
-import cl.vol.app_voluntario.repository.UsuarioRepositoryImp;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,17 +16,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @RequiredArgsConstructor
 public class ApplicationConfig {
 
-    private final UsuarioRepositoryImp usuarioRepository;
-
-    @Bean
-    public UserDetailsService userDetailsService(){
-        return usuarioRepository::findByEmail;
-    }
 
     @Bean
     public AuthenticationProvider authenticationProvider(){
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(userDetailsService());
         authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
     }

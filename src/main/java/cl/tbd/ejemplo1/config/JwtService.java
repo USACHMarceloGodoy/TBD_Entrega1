@@ -1,6 +1,5 @@
 package cl.tbd.ejemplo1.config;
 
-import cl.vol.app_voluntario.model.Rol;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -68,21 +67,5 @@ public class JwtService {
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
-    public Map<String, Object> createExtraClaimsWithIdAndRoles(Integer idUsuario, List<Rol> roles){
-        Map<String, Object> extraClaims = new HashMap<>();
-        extraClaims.put("idUsuario", idUsuario);
-        List<String> roleNames = new ArrayList<>();
-        for(Rol rol : roles){
-            roleNames.add(rol.getNombre());
-        }
-        extraClaims.put("roles", roleNames);
-        return extraClaims;
-    }
 
-    public Map<String, Object> createExtraClaimWithIdAndRol(Integer idUsuario, Rol rol){
-        Map<String, Object> extraClaims = new HashMap<>();
-        extraClaims.put("idUsuario", idUsuario);
-        extraClaims.put("rol", rol);
-        return extraClaims;
-    }
 }
