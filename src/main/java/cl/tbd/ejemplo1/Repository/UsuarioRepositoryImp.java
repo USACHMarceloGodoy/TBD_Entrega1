@@ -12,9 +12,10 @@ public class UsuarioRepositoryImp {
         sql2o.open().createQuery("INSERT INTO usuario (id, nombre, nacimiento, sexo, id_institucion) VALUES (:usuarioId, :usuarioNombre, :usuarioNacimiento, :usuarioSexo, :usuarioId_institucion)", true)
                 .addParameter("usuarioId", usuario.getId())
                 .addParameter("usuarioNombre", usuario.getNombre())
-                .addParameter("usuarioNacimiento", usuario.getNacimiento())
-                .addParameter("usuarioSexo", usuario.getSexo())
-                .addParameter("usuarioId_institucion", usuario.getId_institucion())
+                .addParameter("apellido", usuario.getApellido())
+                .addParameter("email", usuario.getEmail())
+                .addParameter("password", usuario.getPassword())
+                .addParameter("Roles", usuario.getRoles())
                 .executeUpdate().getKey();
     }
 }

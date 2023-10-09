@@ -12,9 +12,9 @@ public class RankingRepositoryIMP {
     public void save(Ranking ranking){
         sql2o.open().createQuery("INSERT INTO ranking (id, id_emergencia, id_voluntario, puntaje) VALUES (:rankingId, :rankingId_emergencia, :rankingId_voluntario, :rankingPuntaje)", true)
                 .addParameter("rankingId", ranking.getId())
-                .addParameter("rankingId_emergencia", ranking.getId_emergencia())
-                .addParameter("rankingId_voluntario", ranking.getId_voluntario())
-                .addParameter("rankingPuntaje", ranking.getPuntaje())
+                .addParameter("puntaje", ranking.getPuntaje())
+                .addParameter("flagInvitado", ranking.getFlagInvitado())
+                .addParameter("flagParticipa", ranking.getFlagParticipa())
                 .executeUpdate().getKey();
     }
 }

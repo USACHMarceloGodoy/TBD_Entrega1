@@ -11,9 +11,16 @@ public class TareaRepositoryImp {
     public void save(Tarea tarea){
         sql2o.open().createQuery("INSERT INTO tarea (id, id_emergencia, id_voluntario, puntaje) VALUES (:tareaId, :tareaId_emergencia, :tareaId_voluntario, :tareaPuntaje)", true)
                 .addParameter("tareaId", tarea.getId())
-                .addParameter("tareaId_emergencia", tarea.getId_emergencia())
-                .addParameter("tareaId_voluntario", tarea.getId_voluntario())
-                .addParameter("tareaPuntaje", tarea.getPuntaje())
+                .addParameter("nombre", tarea.getNombre())
+                .addParameter("descripcion", tarea.getDescripcion())
+                .addParameter("voluntarios_requeridos", tarea.getVoluntariosRequeridos())
+                .addParameter("voluntarios_inscritos", tarea.getVoluntariosInscritos())
+                .addParameter("fechaInicio", tarea.getFechaInicio())
+                .addParameter("fechaFin", tarea.getFechaFin())
+                .addParameter("estado", tarea.getEstado())
+                .addParameter("habilidades", tarea.getHabilidades())
+                .addParameter("emergencia", tarea.getEmergencia())
+                .addParameter("direccion", tarea.getDireccion())
                 .executeUpdate().getKey();
     }
 }
