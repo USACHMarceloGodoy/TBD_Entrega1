@@ -1,40 +1,79 @@
+
+<!-- Vista del login -->
 <template>
-  <div>
-    <h1 style="text-align: center">Iniciar sesión</h1>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <form @submit.prevent="sumbit">
-            <div class="mb-3">
-              <label for="rut" class="form-label">Rut:</label>
-              <input
-                v-model="rut"
-                id="rut"
-                class="form-control"
-                type="text"
-                placeholder="12345678-9"
-              />
+  <section class=" text-center text-lg-start">
+  <style>
+    .rounded-t-5 {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      
+    }
+
+    @media (min-width: 992px) {
+      .rounded-tr-lg-0 {
+        border-top-right-radius: 0;
+      }
+
+      .rounded-bl-lg-5 {
+        border-bottom-left-radius: 0.5rem;
+      }
+    }
+  </style>
+
+  <div class="card mb-3">
+    <div class="row g-0 d-flex align-items-center">
+      <div class="col-lg-4 d-none d-lg-flex">
+        <img src="https://img.freepik.com/foto-gratis/grupo-voluntarios-felices-diversos_53876-15117.jpg?size=626&ext=jpg&ga=GA1.1.1016474677.1696982400&semt=ais" alt="Trendy Pants and Shoes"
+          class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+      </div>
+      <div class="col-lg-8">
+        <div class="card-body py-5 px-md-5">
+
+          <form>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form2Example1" class="form-control" />
+              <label class="form-label" for="form2Example1">RUT</label>
             </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Contraseña:</label>
-              <input
-                v-model="password"
-                id="password"
-                class="form-control"
-                type="password"
-                name="password"
-                placeholder="Contraseña"
-              />
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" id="form2Example2" class="form-control" />
+              <label class="form-label" for="form2Example2">Contraseña</label>
             </div>
-            <button class="btn btn-primary" type="submit">Entrar</button>
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+              <div class="col d-flex justify-content-center">
+                <!-- Checkbox -->
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                  <label class="form-check-label" for="form2Example31"> Recordar Usuario </label>
+                </div>
+              </div>
+
+              <div class="col">
+                <!-- Simple link -->
+                <a href="#!">¿Olvidaste tu contraseña?</a>
+              </div>
+            </div>
+
+            
+            <button type="button" class="btn btn-primary btn-block mb-4">INICIAR SESIÓN</button>
+
           </form>
+
         </div>
       </div>
     </div>
-    <!-- <button @click="obtenerValoresInputs">test</button> -->
   </div>
+</section>
 </template>
 <script>
+
+
+
+
 import axios from 'axios'
 export default {
   data() {
