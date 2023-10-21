@@ -1,10 +1,14 @@
+<!-- NavBar: Barra de navegación -->
 <template>
+    <!-- Implementacion de logo y algunos estilos BS5 -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="/home">
           <img id="logo" src="@/static/logo.png" />
           esQ</a
         >
+
+        <!-- NavBar: Implementacion de menú de navegación -->
         <a class="navbar-brand" href="/home">Home</a>
         <button
           class="navbar-toggler"
@@ -17,6 +21,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- NavBar: Elementos de navegacion a otras paginas reliacionadas -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -38,13 +43,26 @@
       </div>
     </nav>
   </template>
+  <!-- Exportamos componente para poder realizar cierre de sesion mediante "logout" -->
   <script>
   export default {
     methods: {
       logout() {
+        //Limpiamos almacenamiento local
         localStorage.clear()
+        //Redireccionamiento a la pagina principal
         window.location.href = '/'
       },
     },
   }
   </script>
+  <style scoped>
+  nav {
+    background-color: aqua;
+  }
+  
+  #logo {
+    width: 25px;
+    padding-bottom: 10%;
+  }
+  </style>
