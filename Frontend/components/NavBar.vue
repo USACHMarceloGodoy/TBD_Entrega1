@@ -4,7 +4,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="/home">
-          <img id="logo" src="@/static/logo.png" />
+          <img id="logo" src="" />
           esQ</a
         >
 
@@ -60,7 +60,7 @@
   nav {
     background-color: aqua;
   }
-  
+
   #logo {
     width: 25px;
     padding-bottom: 10%;

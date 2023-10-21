@@ -1,79 +1,36 @@
 
 <!-- Vista del login -->
 <template>
-  <section class=" text-center text-lg-start">
-  <style>
-    .rounded-t-5 {
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
-      
-    }
+    <div class="centered-container">
+      <div class="card mb-3">
+        <div class="row g-0 d-flex align-items-center">
+          <div class="col-lg d-none d-lg-flex">
+            <img src="/voluntarios.png" class="w-100 rounded-t-5 rounded-tr-lg-0  rounded-bl-lg-5 " />
+          </div>
+          <div class="col-lg-8">
 
-    @media (min-width: 992px) {
-      .rounded-tr-lg-0 {
-        border-top-right-radius: 0;
-      }
-
-      .rounded-bl-lg-5 {
-        border-bottom-left-radius: 0.5rem;
-      }
-    }
-  </style>
-
-  <div class="card mb-3">
-    <div class="row g-0 d-flex align-items-center">
-      <div class="col-lg-4 d-none d-lg-flex">
-        <img src="https://img.freepik.com/foto-gratis/grupo-voluntarios-felices-diversos_53876-15117.jpg?size=626&ext=jpg&ga=GA1.1.1016474677.1696982400&semt=ais" alt="Trendy Pants and Shoes"
-          class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
-      </div>
-      <div class="col-lg-8">
-        <div class="card-body py-5 px-md-5">
-
-          <form>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="email" id="form2Example1" class="form-control" />
-              <label class="form-label" for="form2Example1">RUT</label>
-            </div>
-
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-              <input type="password" id="form2Example2" class="form-control" />
-              <label class="form-label" for="form2Example2">Contraseña</label>
-            </div>
-
-            <!-- 2 column grid layout for inline styling -->
-            <div class="row mb-4">
-              <div class="col d-flex justify-content-center">
-                <!-- Checkbox -->
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                  <label class="form-check-label" for="form2Example31"> Recordar Usuario </label>
+            <div class="card-body py-5 px-md-5">
+              <h2 class="mb-4">INGRESA</h2>
+              <form>
+                <div class="form-outline mb-4">
+                  <input type="text" id="form2Example1" class="form-control" />
+                  <label class="form-label" for="form2Example1">RUT</label>
                 </div>
-              </div>
-
-              <div class="col">
-                <!-- Simple link -->
-                <a href="#!">¿Olvidaste tu contraseña?</a>
-              </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" id="form2Example2" class="form-control" />
+                  <label class="form-label" for="form2Example2">Contraseña</label>
+                </div>
+                <button type="button" class="btn btn-danger btn-block mb-4">INICIAR SESIÓN</button>
+              </form>
             </div>
-
-            
-            <button type="button" class="btn btn-primary btn-block mb-4">INICIAR SESIÓN</button>
-
-          </form>
-
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 </template>
+
 <script>
-
-
-
-
 import axios from 'axios'
 export default {
   data() {
@@ -133,5 +90,41 @@ export default {
   },
 }
 </script>
-</script>
+
+<style>
+.rounded-t-5 {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+  .rounded-tr-lg-0 {
+    border-top-left-radius: 0.5rem;
+  }
+
+  .rounded-bl-lg-5 {
+    border-bottom-left-radius: 0.5rem;
+  }
+}
+
+/* Estilos para centrar en la página */
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Agregar imagen de fondo */
+  background-image: url('/fondo.jpg');
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center; /* Centra la imagen en el contenedor */
+}
+</style>
+
+
+
+
+
+
+
 

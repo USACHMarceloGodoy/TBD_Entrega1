@@ -1,5 +1,3 @@
-<!-- MapaRegistro : Seleccion y emitor de eventos -->
-
 <!-- Estructura de HTML -->
 <template>
     <div id="map">
@@ -10,11 +8,11 @@
       </l-map>
     </div>
   </template>
-  
+
   <!-- Importamos componentes necesarios para el uso adecuado de MapaRegistro -->
   <script>
   import { LMap, LTileLayer, LMarker } from 'vue2-leaflet'
-  
+
   export default {
     components: {
       LMap,
@@ -42,7 +40,7 @@
     },
   }
   </script>
-  
+
     <!-- MapaRegistro : Tamaño en pixeles del mapa a mostrar -->
   <style scoped>
   #map {
