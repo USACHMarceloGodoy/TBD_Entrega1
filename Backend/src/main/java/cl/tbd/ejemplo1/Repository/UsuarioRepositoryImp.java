@@ -92,4 +92,17 @@ public class UsuarioRepositoryImp {
             System.out.println(e.getMessage());
         }
     }
+
+    public Usuario findByEmail(String email) {
+        try (Connection con = sql2o.open()) {
+            String sql = "SELECT * FROM usuario WHERE email = :email";
+            return con.createQuery(sql)
+                    .addColumnMapping("id_usuario", "id")
+                    .addParameter("email", email)
+                    .executeAndFetchFirst(Usuario.class);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
 }
