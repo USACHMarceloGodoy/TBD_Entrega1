@@ -13,7 +13,7 @@ public class UsuarioRepositoryImp {
     public Sql2o sql2o;
 
     // CRUD - Create
-    public void save(Usuario usuario) {
+    public Usuario save(Usuario usuario) {
         try (Connection con = sql2o.open()) {
             Integer id = con.createQuery("SELECT nextval('usuario_seq')")
                     .executeScalar(Integer.class);
@@ -34,6 +34,7 @@ public class UsuarioRepositoryImp {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        return usuario;
     }
 
     // CRUD - Find All

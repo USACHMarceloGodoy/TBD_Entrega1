@@ -78,5 +78,18 @@ public class RolRepositoryImp {
             System.out.println(e.getMessage());
         }
     }
+
+    public Rol findByNombre(String roleVoluntario) {
+        try (Connection con = sql2o.open()) {
+            String sql = "SELECT * FROM rol WHERE nombre = :nombre";
+            return con.createQuery(sql)
+                    .addColumnMapping("id_rol", "id")
+                    .addParameter("nombre", roleVoluntario)
+                    .executeAndFetchFirst(Rol.class);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
 }
 
