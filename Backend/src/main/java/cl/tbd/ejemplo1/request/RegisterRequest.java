@@ -33,4 +33,5 @@ public class RegisterRequest {
     private Double longit;
     @NotNull(message = "Debe ingresar una latitud válida.")
     private Double latit;
+
 }

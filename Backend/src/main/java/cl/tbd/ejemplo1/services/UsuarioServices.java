@@ -4,7 +4,6 @@ import cl.tbd.ejemplo1.Repository.*;
 import cl.tbd.ejemplo1.errors.*;
 import cl.tbd.ejemplo1.models.*;
 import cl.tbd.ejemplo1.config.JwtService;
-import cl.tbd.ejemplo1.request.*;
 import cl.tbd.ejemplo1.Repository.*;
 import lombok.RequiredArgsConstructor;
 import cl.tbd.ejemplo1.errors.ApiErrorException;
@@ -23,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 public class UsuarioServices {
+    private RegisterRequest request;
     private UsuarioRepositoryImp usuarioRepository;
     private RolRepositoryImp rolRepository;
     private InstitucionRepositoryImp institucionRepository;
@@ -34,7 +34,7 @@ public class UsuarioServices {
     public List<Usuario> getUsuarios(){
         return usuarioRepository.findAll();
     }
-public void createUsuario(Map<String, Object> request) {
+public void createUsuario(RegisterRequest request) {
         try{
             if(usuarioRepository.findByEmail(request.getEmail()) != null){
                 throw new ApiErrorException("El correo electronico ya existe.");
