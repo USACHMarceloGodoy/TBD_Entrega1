@@ -7,8 +7,7 @@
           <div class="col-lg d-none d-lg-flex">
             <img src="/voluntarios.png" class="w-100 rounded-t-5 rounded-tr-lg-0  rounded-bl-lg-5 " />
           </div>
-          <div class="col-lg-8">
-
+          <div class="col-lg-8" >
             <div class="card-body py-5 px-md-5">
               <h2 class="mb-4">INGRESA</h2>
               <form>
@@ -92,33 +91,37 @@ export default {
 </script>
 
 <style>
-.rounded-t-5 {
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-}
-
-@media (min-width: 1200px) {
-  .rounded-tr-lg-0 {
+  .rounded-t-5 {
     border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
   }
 
-  .rounded-bl-lg-5 {
-    border-bottom-left-radius: 0.5rem;
-  }
-}
+  @media (min-width: 1200px) {
+    .rounded-tr-lg-0 {
+      border-top-left-radius: 0.5rem;
+    }
 
-/* Estilos para centrar en la página */
-.centered-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  /* Agregar imagen de fondo */
-  background-image: url('/fondo.jpg');
-  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-position: center; /* Centra la imagen en el contenedor */
-}
+    .rounded-bl-lg-5 {
+      border-bottom-left-radius: 0.5rem;
+    }
+  }
+
+  /* Estilos para centrar en la página */
+  .centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Agregar imagen de fondo */
+    background-image: url('/fondo.jpg');
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen en el contenedor */
+  }
+  .centered-container img{
+    padding-left: 50px;
+  }
+
 </style>
 
 

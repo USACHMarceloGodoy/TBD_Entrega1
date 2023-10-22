@@ -1,6 +1,7 @@
 <template>
-    <div>
+  <div class='emergency-page'>
       <NavBar />
+      <br>
       <h1 style="text-align: center; font-size: 50px">Emergencias</h1>
       <div class="row">
         <div class="col">
@@ -116,7 +117,7 @@
               ></MapaRegistro>
             </div>
           </div>
-          
+
         </div>
       </div>
       <div class="row mt-4">
@@ -130,7 +131,7 @@
   import MapaRegistro from '../components/MapaRegistro.vue'
   import NavBar from '../components/NavBar.vue'
   import axios from 'axios'
-  
+
   export default {
     name: 'EmergenciasView',
     components: { NavBar },
@@ -162,7 +163,7 @@
           'Aysén',
           'Magallanes'
         ],
-  
+
         // Datos traidos desde el backend
         habilidades: [],
         instituciones: [], // Lista de instituciones
@@ -196,7 +197,7 @@
           console.log(error)
         }
       },
-  
+
       async enviar() {
         // Verificar que todos los campos estén completos
         if (
@@ -211,7 +212,7 @@
           alert('Por favor, complete todos los campos')
           return
         }
-  
+
         // Crear objeto emergencia
         const emergencia = {
           nombre: this.nombre,
@@ -235,7 +236,7 @@
         } catch (error) {
           console.log(error)
         }
-  
+
         // Enviar habilidades
         for (let i = 0; i < this.habilidadesSeleccionadas.length; i++) {
           // Buscar el id de la habilidad seleccionada
@@ -243,7 +244,7 @@
             (e) => e.nombre == this.habilidadesSeleccionadas[i]
           ).idHabilidad
           console.log('idHabilidad: ', idHabilidad)
-  
+
           // Hacer petición a backend
           const responseHabilidad = await axios.post(
             'http://localhost:8080/api/emergencia-habilidades',
@@ -264,42 +265,50 @@
     },
   }
   </script>
-  <style scoped>
-  
-  
-  
+  <style>
+
   /* Secciones general */
-  #contenido section {
+  .contenido section {
     width: 50%;
     /* border-style: solid; */
     padding: 30px;
     /* background-color: black; */
   }
-  
-  #contenido section h2 {
+
+  .contenido section h2 {
     text-align: center;
   }
-  
-  table {
+
+  .table {
     margin: auto;
     border-collapse: collapse;
     width: 75%;
     border-radius: 10px;
     overflow: hidden;
   }
-  
-  table + h2 {
+
+  .table + h2 {
     margin-top: 15px;
   }
-  
-  h2 + table {
+
+  .h2 + table {
     margin-top: 5px;
   }
-  
-  table th,
-  table td {
+
+  .table th,
+  .table td {
     padding: 5px;
     background-color: rgba(30, 86, 101, 0.5);
     text-align: center;
+  }
+  .emergency-page {
+    background-image: url('/fondo.jpg');
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen en el contenedor */
+    min-height: 100vh;
+  }
+  .emergency-page h1{
+    background-color: white;
   }
   </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="text-center">
+    <div class="detalles-page">
       <NavBar />
       <h1>Detalles de '{{ emergencia.nombre }}'</h1>
       <div class="container">
@@ -39,7 +39,7 @@
         <div>
           <h1>Voluntarios registrados</h1>
           <table></table>
-  
+
           <table>
             <tr>
               <td>
@@ -158,7 +158,7 @@
       </div>
     </div>
   </template>
-  
+
   <script>
   import axios from 'axios'
   import NavBar from '../components/NavBar.vue'
@@ -172,13 +172,13 @@
         regionRegister: '',
         selectedCoordinates: null,
         //
-  
+
         emergencia: null,
         institucion: null,
         registrados: 0,
         voluntarios: [],
         numeroVoluntarios: 0,
-  
+
         // Select de regiones
         regionesChile: [
           'Arica y Parinacota',
@@ -245,7 +245,7 @@
         } catch (error) {
           console.log(error)
         }
-  
+
         const voluntario_emergencia = {
           idVoluntario: JSON.parse(localStorage.getItem('client')).id,
           idEmergencia: this.emergencia.idEmergencia,
@@ -254,7 +254,7 @@
           '🚀 ~ file: detallesEmergencia.vue:69 ~ registrarse ~ voluntario_emergencia:',
           voluntario_emergencia
         )
-  
+
         // Enviar a backend
         try {
           const response = await axios.post(
@@ -300,7 +300,7 @@
           alert('Seleccione un punto en el mapa')
           return
         }
-  
+
         const tarea = {
           nombre: this.nombre,
           descripcion: this.descripcion,
@@ -310,9 +310,9 @@
           estado: 'Activa',
           idEmergencia: this.emergencia.idEmergencia,
         }
-  
+
         console.log('Enviando tarea: ', tarea)
-  
+
         // Enviar al backend
         try {
           const response = await axios.post(
@@ -334,7 +334,7 @@
     },
   }
   </script>
-  
+
   <style scoped>
   table {
     margin: auto;
@@ -343,29 +343,40 @@
     overflow: hidden;
     border-radius: 10px;
   }
-  
+
   table + h2 {
     margin-top: 15px;
   }
-  
+
   h2 + table {
     margin-top: 5px;
   }
-  
+
   table th,
   table td {
     padding: 5px;
     background-color: rgba(30, 86, 101, 0.5);
     text-align: center;
   }
-  
+
   form .container {
     background-color: rgba(30, 86, 101, 0.5);
     border-radius: 30px 30px;
   }
-  
+
   form .container #mapaRegistro {
     margin: auto;
   }
   </style>
-  
+  <style>
+  .detalles-page {
+    background-image: url('/fondo.jpg');
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen en el contenedor */
+    min-height: 100vh;
+  }
+  .detalles-page h1{
+    background-color: white;
+  }
+  </style>

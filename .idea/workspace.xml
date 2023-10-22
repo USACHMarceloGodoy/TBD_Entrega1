@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6431904-bb0e-4ffb-93ca-201a5636d8f0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/pages/perfil.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/perfil.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/detallesEmergencia.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/detallesEmergencia.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/emergencia.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/emergencia.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/login.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,38 +62,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Alexa/Desktop/TBD_Entrega1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Alexa/Desktop/ProyectoTopE/Mingeso_TopStudent&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "vue.recent.templates": [
-      "Vue Composition API Component"
+  &quot;keyToStringList&quot;: {
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Composition API Component&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\marce\Downloads\TBD_entrega1\Entrega1\src\main\java\cl\tbd\ejemplo1" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Entrega1" />
       <method v="2">
@@ -97,13 +103,6 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="Entrega1" />
       <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Ejemplo1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="ejemplo1.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="cl.tbd.ejemplo1.Ejemplo1Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,7 +139,11 @@
       <workItem from="1697838187039" duration="297000" />
       <workItem from="1697838890270" duration="167000" />
       <workItem from="1697926898159" duration="334000" />
-      <workItem from="1697927245943" duration="4967000" />
+      <workItem from="1697927245943" duration="6374000" />
+      <workItem from="1698001096814" duration="96000" />
+      <workItem from="1698001207885" duration="3753000" />
+      <workItem from="1698008506819" duration="7000" />
+      <workItem from="1698008527067" duration="1836000" />
     </task>
     <servers />
   </component>

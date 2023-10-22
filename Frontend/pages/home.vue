@@ -1,10 +1,11 @@
-<template>
-    <div>
+<template xmlns:bgcolor='http://java.sun.com/xml/ns/persistence/orm'>
+    <div class='home-page'>
     <!-- Incluye el componente NavBar para la barra de navegación -->
       <NavBar />
       <div class="row">
         <div class="col">
             <!-- Título  -->
+          <br>
           <h1 class="text-center">Emergencias</h1>
           <!-- Primera fila-->
           <div class="row mb-5">
@@ -178,7 +179,7 @@
                 </button>
               </div>
             </div>
-  
+
             <!-- <Mapa Emergencias Finalizadas> -->
             <div class="col-md-5">
               <div class="map-container">
@@ -473,5 +474,16 @@ table td {
   padding: 5px;
   background-color: rgba(30, 86, 101, 0.384);
   text-align: center;
+}
+
+.home-page {
+  background-image: url('/fondo.jpg');
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center; /* Centra la imagen en el contenedor */
+  min-height: 100vh;
+}
+.home-page h1{
+  background-color: white;
 }
 </style>
