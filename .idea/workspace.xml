@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6431904-bb0e-4ffb-93ca-201a5636d8f0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/pages/tarea.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/pages/detallesEmergencia.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/detallesEmergencia.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/components/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/components/NavBar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/pages/emergencia.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/emergencia.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/pages/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/pages/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/login.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +139,7 @@
       <workItem from="1698001096814" duration="96000" />
       <workItem from="1698001207885" duration="3753000" />
       <workItem from="1698008506819" duration="7000" />
-      <workItem from="1698008527067" duration="1836000" />
+      <workItem from="1698008527067" duration="4962000" />
     </task>
     <servers />
   </component>

@@ -2,7 +2,7 @@
   <div class='emergency-page'>
       <NavBar />
       <br>
-      <h1 style="text-align: center; font-size: 50px">Emergencias</h1>
+      <h1 style="text-align: center">Emergencias</h1>
       <div class="row">
         <div class="col">
           <div class="row">

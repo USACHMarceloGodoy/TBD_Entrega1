@@ -1,13 +1,7 @@
 <!-- NavBar: Barra de navegación -->
 <template>
-    <!-- Implementacion de logo y algunos estilos BS5 -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="/home">
-          <img id="logo" src="" />
-          esQ</a
-        >
-
         <!-- NavBar: Implementacion de menú de navegación -->
         <a class="navbar-brand" href="/home">Home</a>
         <button
@@ -21,11 +15,14 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- NavBar: Elementos de navegacion a otras paginas reliacionadas -->
+        <!-- NavBar: Elementos de navegacion a otras paginas relacionadas -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="/perfil">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/home">Emergencias</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/emergencia">Crear emergencia</a>
