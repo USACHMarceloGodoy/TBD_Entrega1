@@ -1,0 +1,17 @@
+-- Crear una consulta común de tabla (CTE) llamada TareasVoluntarios
+WITH TareasVoluntarios AS (
+    -- Selecciona la ID de la emergencia, la ID de la tarea, el nombre de la tarea y la cantidad de voluntarios inscritos
+    SELECT t.emergencia_id, t.id AS tarea_id, t.nombre AS tarea_nombre, t.voluntariosinscritos,
+           -- Asigna un número de fila (ranking) a cada fila dentro de cada partición de emergencia, ordenado por la cantidad de voluntarios inscritos
+           ROW_NUMBER() OVER (PARTITION BY t.emergencia_id ORDER BY t.voluntariosinscritos) AS ranking
+    FROM tarea t
+)
+-- Selecciona la emergencia, la ID de la tarea, el nombre de la tarea y la cantidad de voluntarios inscritos
+SELECT tv.emergencia_id AS emergencia, tv.tarea_id, tv.tarea_nombre, tv.voluntariosinscritos
+-- Filtra las filas con un rango de 1 (las tareas con menos voluntarios inscritos) dentro de cada emergencia
+FROM TareasVoluntarios tv
+WHERE tv.ranking = 1
+-- Ordena el resultado por ID de emergencia
+ORDER BY tv.emergencia_id;
+
+
