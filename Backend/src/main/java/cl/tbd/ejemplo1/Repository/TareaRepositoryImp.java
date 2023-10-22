@@ -13,7 +13,7 @@ public class TareaRepositoryImp {
     public Sql2o sql2o;
 
     // CRUD - Create
-    public void save(Tarea tarea) {
+    public Tarea save(Tarea tarea) {
         try (Connection con = sql2o.open()) {
             Integer id = con.createQuery("SELECT nextval('tarea_seq')")
                     .executeScalar(Integer.class);
@@ -41,6 +41,7 @@ public class TareaRepositoryImp {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        return tarea;
     }
 
     // CRUD - Find All
@@ -104,6 +105,19 @@ public class TareaRepositoryImp {
                     .executeUpdate();
         } catch (Exception e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    public List<Tarea> findAllByNombreRegion(String nombreRegion) {
+        try (Connection con = sql2o.open()) {
+            String sql = "SELECT * FROM tarea WHERE tarea.direccion IN (SELECT direccion FROM region WHERE region.nombre = :nombreRegion)";
+            return con.createQuery(sql)
+                    .addParameter("nombreRegion", nombreRegion)
+                    .addColumnMapping("id_tarea", "id")
+                    .executeAndFetch(Tarea.class);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
         }
     }
 }

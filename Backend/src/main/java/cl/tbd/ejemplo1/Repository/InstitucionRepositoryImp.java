@@ -90,5 +90,19 @@ public class InstitucionRepositoryImp {
             System.out.println(e.getMessage());
         }
     }
+    public void set(Institucion institucion){
+        try (Connection con = sql2o.open()) {
+            String sql = "UPDATE institucion SET nombre = :nombre, descripcion = :descripcion, direccion = :direccion WHERE id_institucion = :id_institucion";
+            con.createQuery(sql)
+                    .addParameter("id_institucion", institucion.getId())
+                    .addParameter("nombre", institucion.getNombre())
+                    .addParameter("descripcion", institucion.getDescripcion())
+                    .addParameter("direccion", institucion.getDireccion())
+                    .executeUpdate()
+                    .getKey(Integer.class);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
 

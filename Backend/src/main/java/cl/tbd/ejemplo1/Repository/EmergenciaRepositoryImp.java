@@ -1,7 +1,7 @@
 package cl.tbd.ejemplo1.Repository;
 
 import cl.tbd.ejemplo1.models.Emergencia;
-import org.springframework.beans.factory.annotation.Autowired;
+import cl.tbd.ejemplo1.models.Habilidad;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
@@ -14,7 +14,7 @@ public class EmergenciaRepositoryImp {
     public Sql2o sql2o;
     //CRUD
     //Create
-    public void save(Emergencia emergencia){
+    public Emergencia save(Emergencia emergencia){
         try (org.sql2o.Connection con = sql2o.open()) {
             Integer id = con.createQuery("SELECT nextval('emergencia_seq')")
                     .executeScalar(Integer.class);
@@ -37,6 +37,7 @@ public class EmergenciaRepositoryImp {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        return emergencia;
     }
     //find all
     public List<Emergencia> findAll(){
@@ -92,6 +93,32 @@ public class EmergenciaRepositoryImp {
                     .getKey(Integer.class);
         } catch (Exception e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    public List<Habilidad> findAllByEmergenciaId(Integer idEmergencia) {
+        try (Connection con = sql2o.open()) {
+            String sql = "SELECT * FROM habilidad WHERE id_habilidad IN (SELECT id_habilidad FROM emergencia_habilidad WHERE id_emergencia = :id_emergencia)";
+            return con.createQuery(sql)
+                    .addParameter("id_emergencia", idEmergencia)
+                    .addColumnMapping("id_habilidad", "id")
+                    .executeAndFetch(Habilidad.class);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public Emergencia[] findAllByHabilidadId(Integer idHabilidad) {
+        try (Connection con = sql2o.open()) {
+            String sql = "SELECT * FROM emergencia WHERE id_emergencia IN (SELECT id_emergencia FROM emergencia_habilidad WHERE id_habilidad = :id_habilidad)";
+            return con.createQuery(sql)
+                    .addParameter("id_habilidad", idHabilidad)
+                    .addColumnMapping("id_emergencia", "id")
+                    .executeAndFetch(Emergencia[].class).toArray(new Emergencia[0]);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
         }
     }
 }

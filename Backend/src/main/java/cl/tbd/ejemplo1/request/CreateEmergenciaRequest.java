@@ -28,8 +28,8 @@ public class CreateEmergenciaRequest {
     private Date fechaFin;
     @NotNull(message = "Debe ingresar una institución válida.")
     private Integer id_institucion;
-    @NotNull(message = "Debe ingresar una longitud válida.")
-    private Double longit;
-    @NotNull(message = "Debe ingresar una latitud válida.")
-    private Double latit;
+    @NotNull(message = "Debe ingresar un nivel de prioridad válido.")
+    private Integer nivelPrioridad;
+    @NotNull(message = "Debe ingresar una dirección válida.")
+    private String direccion;
 }
