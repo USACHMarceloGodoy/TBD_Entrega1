@@ -68,10 +68,9 @@ public class JwtService {
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
-    public Map<String, Object> createExtraClaimWithIdAndRol(Integer id, Rol rol) {
+    public Map<String, Object> createExtraClaimWithId(Integer id) {
         Map<String, Object> extraClaims = new HashMap<>();
         extraClaims.put("id", id);
-        extraClaims.put("rol", rol.getNombre());
         return extraClaims;
     }
 }

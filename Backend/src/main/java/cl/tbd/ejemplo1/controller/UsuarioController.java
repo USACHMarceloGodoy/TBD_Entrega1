@@ -26,11 +26,20 @@ public class UsuarioController {
         return usuarioServices.getUsuario(id);
     }
 
+    @GetMapping("/registro")
+    public String registro() {
+        return "/registro";
+    }
     @PostMapping("/registro")
     public void createUsuario(@RequestBody RegisterRequest request) {
         usuarioServices.createUsuario(request);
     }
 
+
+    @GetMapping("/autenticacion")
+    public String autenticacion() {
+        return "/autenticacion";
+    }
     @PostMapping("/autenticacion")
     public String authentication(@RequestBody AuthenticationRequest request) {
         return usuarioServices.authentication(request);

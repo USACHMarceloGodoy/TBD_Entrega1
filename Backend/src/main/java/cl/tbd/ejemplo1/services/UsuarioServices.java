@@ -78,9 +78,7 @@ public void createUsuario(RegisterRequest request) {
                         request.getPassword()
                 )
         );
-
-        Rol rol = rolRepository.findById(request.getIdRol());
-        Map<String, Object> extraClaims = jwtService.createExtraClaimWithIdAndRol(usuario.getId(), rol);
+        Map<String, Object> extraClaims = jwtService.createExtraClaimWithId(usuario.getId());
         return jwtService.generateToken(extraClaims, usuario);
     }
 }

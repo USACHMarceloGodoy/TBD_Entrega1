@@ -38,8 +38,6 @@ public class CreateTareaRequest {
     private Integer idEstado;
     @NotNull(message = "Debe seleccionar habilidades.")
     private Integer[] idsHabilidades;
-    @NotNull(message = "Debe seleccionar una ubicación.")
-    private Double longit;
-    @NotNull(message = "Debe seleccionar una ubicación.")
-    private Double latit;
+    @NotNull(message = "Debe ingresar una dirección.")
+    private String direccion;
 }
