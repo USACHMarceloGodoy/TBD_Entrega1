@@ -12,15 +12,15 @@
               <h2 class="mb-4">INGRESA</h2>
               <form>
                 <div class="form-outline mb-4">
-                  <input type="text" id="form2Example1" class="form-control" />
-                  <label class="form-label" for="form2Example1">RUT</label>
+                  <input type="email" v-model="email" id="form2Example1" class="form-control" />
+                  <label class="form-label" for="form2Example1">Correo Electrónico</label>
                 </div>
                 <!-- Password input -->
                 <div class="form-outline mb-4">
                   <input type="password" id="form2Example2" class="form-control" />
                   <label class="form-label" for="form2Example2">Contraseña</label>
                 </div>
-                <button type="button" class="btn btn-danger btn-block mb-4">INICIAR SESIÓN</button>
+                <button class="btn btn-primary" type="submit">INGRESAR</button>
               </form>
             </div>
           </div>
@@ -34,14 +34,14 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      rut: '',
+      email: '', // Cambiado de rut a email
       password: '',
     }
   },
   methods: {
-    async sumbit() {
-      if (this.rut.length < 10) {
-        alert('Escriba un rut válido')
+    async submit() {
+      if (!this.email) { // Validación de correo electrónico
+        alert('Escriba su correo electrónico')
         return
       }
 
@@ -52,9 +52,9 @@ export default {
 
       try {
         const response = await axios.post(
-          'http://localhost:8080/api/voluntarios/login',
+          'http://localhost:8090/usuarios/autentication',
           {
-            rut: this.rut,
+            email: this.email, // Cambiado de rut a email
             contrasena: this.password,
           },
           {
@@ -77,8 +77,8 @@ export default {
       try {
         console.log('Pidiendo datos de cliente...')
         const response = await axios.get(
-          'http://localhost:8080/api/voluntarios/client',
-          { params: { rut: this.rut } }
+          'http://localhost:8090/usuarios/autentication',
+          { params: { email: this.email } } // Cambiado de rut a email
         )
         localStorage.setItem('client', JSON.stringify(response.data))
         window.location.href = '/home'

@@ -1,10 +1,18 @@
 # STORE
+README FRONTEND
+1) Descargar o clonar el archivo carpeta de nombre "Frontend" del URL del github repositorio enviado.
 
-**This directory is not required, you can delete it if you don't want to use it.**
+2) Instalar Visual Studio Code mediante la pagina https://code.visualstudio.com/, una vez realizados los pasos de instalación, procedemos con abrir el proyecto front en el IDE.
+   (Instalar extensiones en VS code si es necesario para manejar mejor el proyecto)
 
-This directory contains your Vuex Store files.
-Vuex Store option is implemented in the Nuxt.js framework.
+3) Instalar node.js para Vue mediante la pagina https://nodejs.org/es y seguir los pasos de instalación.
 
-Creating a file in this directory automatically activates the option in the framework.
+4) Abrimos la terminal del proyecto y ejecutamos los siguientes comando:
+   - npm i vue
+   - npm install
+   - npm i nuxt
+   - npm npm i leaflet vue2-leaflet
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/vuex-store).
+5) Una vez realizado los pasos mencionados anteriormente, procedemos a escribir el siguiente comando en la consola de VS Code "npm run dev" y copiamos el link que nos muestra en la terminal (localhost) o con ctrl + click en el mismo enlace para poder visualizar el Front por el navegador
+	
+
